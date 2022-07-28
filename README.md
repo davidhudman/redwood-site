@@ -119,3 +119,50 @@ The best way to learn Redwood is by going through the comprehensive [tutorial](h
 
 - Stay updated: read [Forum announcements](https://community.redwoodjs.com/c/announcements/5), follow us on [Twitter](https://twitter.com/redwoodjs), and subscribe to the [newsletter](https://redwoodjs.com/newsletter)
 - [Learn how to contribute](https://redwoodjs.com/docs/contributing)
+
+## Key Commands
+
+Start redwood:
+  ```
+  yarn redwood dev
+  ```
+
+Generate a page named "Contact":
+  ```
+  yarn redwood g page contact
+  ```
+
+Generate a component named "Article":
+  ```
+  yarn redwood g component Article
+  ```
+
+Generate a cell named Article - cells are more for getting data out of the database, but for putting data in, try useMutation
+  ```
+  yarn redwood g cell Article
+  ```
+
+Scaffold an existing data schema:
+  ```
+  yarn redwood g scaffold post
+  ```
+
+Define your own datamodels in schema.prisma and run this to create migrations for them and apply to your dev DB:
+  ```
+  yarn rw prisma migrate dev
+  ```
+
+Generate a blog layout:
+  ```
+  yarn redwood g layout blog
+  ```
+
+Create a Graphql interface to access the Contact table:
+  ```
+  yarn rw g sdl Contact
+  ```
+
+
+
+[Read the full documentation](https://redwoodjs.com/docs/getting-started.md)
+
