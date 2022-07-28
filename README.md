@@ -162,7 +162,20 @@ Create a Graphql interface to access the Contact table:
   yarn rw g sdl Contact
   ```
 
+Get the internals of dbAuth added to our app:
+  ```
+  yarn rw setup auth dbAuth
+  ```
 
+To create a new secret (SESSION_SECRET environment variable in redwoodblog/.env), run:
+  ```
+    yarn rw generate secret
+  ```
+
+Generate simple Login, Signup and Forgot Password pages:
+  ```
+  yarn rw g dbAuth
+  ```
 
 [Read the full documentation](https://redwoodjs.com/docs/getting-started.md)
 
