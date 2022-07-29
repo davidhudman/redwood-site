@@ -34,15 +34,3 @@ model User {
   resetToken          String?
   resetTokenExpiresAt DateTime?
 }
-
-model LandListing {
-  id        Int      @id @default(autoincrement())
-  acres     Int
-  title     String
-  price     Int
-  address   String
-  city      String
-  state     String
-  zip       String
-  createdAt DateTime @default(now())
-}
