@@ -10,6 +10,7 @@
 import { Private, Router, Route, Set } from '@redwoodjs/router'
 
 import BlogLayout from 'src/layouts/BlogLayout'
+import LandListingsLayout from 'src/layouts/LandListingsLayout'
 import PostsLayout from 'src/layouts/PostsLayout'
 
 const Routes = () => {
@@ -21,6 +22,10 @@ const Routes = () => {
           <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
           <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
           <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+          <Route path="/land-listings/new" page={LandListingNewLandListingPage} name="newLandListing" />
+          <Route path="/land-listings/{id:Int}/edit" page={LandListingEditLandListingPage} name="editLandListing" />
+          <Route path="/land-listings/{id:Int}" page={LandListingLandListingPage} name="landListing" />
+          <Route path="/land-listings" page={LandListingLandListingsPage} name="landListings" />
         </Set>
       </Private>
       <Set wrap={BlogLayout}>

@@ -35,6 +35,12 @@ const BlogLayout = ({ children }) => {
             <li>
               <Link to={routes.posts()}>Posts</Link>
             </li>
+            <li>
+              <Link to={routes.landListings()}>Land Listings</Link>
+            </li>
+            <li>
+              <Link to={routes.newLandListing()}>Add New Listing</Link>
+            </li>
           </ul>
         </nav>
       </header>
