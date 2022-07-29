@@ -10,6 +10,9 @@ const BlogLayout = ({ children }) => {
         <nav>
           <ul>
             <li>
+              <Link to={routes.login()}>Login</Link>
+            </li>
+            <li>
               <Link to={routes.home()}>Home</Link>
             </li>
             <li>
