@@ -169,7 +169,7 @@ Get the internals of dbAuth added to our app:
 
 To create a new secret (SESSION_SECRET environment variable in redwoodblog/.env), run:
   ```
-    yarn rw generate secret
+  yarn rw generate secret
   ```
 
 Generate simple Login, Signup and Forgot Password pages:
