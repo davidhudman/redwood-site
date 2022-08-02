@@ -1,15 +1,24 @@
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+
 import { Link, routes } from '@redwoodjs/router'
+
 const Article = ({ article }) => {
   return (
-    <article key={article.id}>
-      <header>
-        <h2>
-          <Link to={routes.article({ id: article.id })}>{article.title}</Link>
-        </h2>
-      </header>
-      <p>{article.body}</p>
-      <div>Posted at: {article.createdAt}</div>
-    </article>
+    <Card>
+      <Card.Header>Featured Article - #{article.id}</Card.Header>
+      <Card.Body>
+        <Card.Title>{article.title}</Card.Title>
+        <Card.Text>{article.body}</Card.Text>
+        <Card.Text>{article.createdAt}</Card.Text>
+        <Button
+          href={routes.article({ id: article.id })}
+          variant="outline-primary"
+        >
+          Read Article
+        </Button>
+      </Card.Body>
+    </Card>
   )
 }
 

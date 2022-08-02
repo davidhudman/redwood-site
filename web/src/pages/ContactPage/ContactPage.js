@@ -37,6 +37,11 @@ const ContactPage = () => {
     <>
       <MetaTags title="Contact" description="Contact page" />
 
+      {/* h1 page title with centered text */}
+      <br />
+      <h1 className="text-center">Contact</h1>
+      <br />
+
       <Toaster />
       <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }} error={error}>
         <FormError error={error} wrapperClassName="form-error" />

@@ -29,6 +29,9 @@ const BlogLayout = ({ children }) => {
                 <Nav.Link href={routes.about()}>About</Nav.Link>
                 <Nav.Link href={routes.contact()}>Contact</Nav.Link>
                 <NavDropdown title="Admin Pages" id="basic-nav-dropdown">
+                  <NavDropdown.Item href={routes.newPost()}>
+                    Add New Post
+                  </NavDropdown.Item>
                   <NavDropdown.Item href={routes.posts()}>
                     Posts
                   </NavDropdown.Item>
