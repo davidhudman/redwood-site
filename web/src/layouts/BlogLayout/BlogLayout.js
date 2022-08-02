@@ -11,11 +11,10 @@ const BlogLayout = ({ children }) => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
   return (
     <>
-      <header>
+      <header style={{ width: '90%', margin: '0 auto' }}>
         <Navbar bg="light" expand="15000px">
           <Container>
             <Navbar.Brand href={routes.home()}>RW</Navbar.Brand>
-            {isAuthenticated ? <></> : <Link to={routes.login()}>Login</Link>}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
@@ -49,7 +48,7 @@ const BlogLayout = ({ children }) => {
                     Logout
                   </button>
                 ) : (
-                  <></>
+                  <Button href={routes.login()}>Login</Button>
                 )}
               </Nav>
             </Navbar.Collapse>

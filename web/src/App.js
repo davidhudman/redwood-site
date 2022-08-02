@@ -15,9 +15,7 @@ const App = () => (
       <AuthProvider type="dbAuth">
         <RedwoodApolloProvider>
           {/* width 90% and center text content for all pages */}
-          <div style={{ width: '90%', margin: '0 auto' }}>
-            <Routes />
-          </div>
+          <Routes />
         </RedwoodApolloProvider>
       </AuthProvider>
     </RedwoodProvider>

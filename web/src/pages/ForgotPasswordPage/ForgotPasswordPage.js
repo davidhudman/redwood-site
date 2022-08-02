@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
+
 import { useAuth } from '@redwoodjs/auth'
+import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
 import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
 
 const ForgotPasswordPage = () => {
   const { isAuthenticated, forgotPassword } = useAuth()
@@ -39,7 +40,7 @@ const ForgotPasswordPage = () => {
     <>
       <MetaTags title="Forgot Password" />
 
-      <main className="rw-main">
+      <main className="rw-main" style={{ width: '100%', margin: '0 auto' }}>
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">
           <div className="rw-segment">

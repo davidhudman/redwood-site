@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+
 import { useAuth } from '@redwoodjs/auth'
-import { navigate, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
 import {
   Form,
   Label,
@@ -10,6 +8,9 @@ import {
   Submit,
   FieldError,
 } from '@redwoodjs/forms'
+import { navigate, routes } from '@redwoodjs/router'
+import { MetaTags } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 
 const ResetPasswordPage = ({ resetToken }) => {
   const { isAuthenticated, reauthenticate, validateResetToken, resetPassword } =
@@ -59,7 +60,7 @@ const ResetPasswordPage = ({ resetToken }) => {
     <>
       <MetaTags title="Reset Password" />
 
-      <main className="rw-main">
+      <main className="rw-main" style={{ width: '100%', margin: '0 auto' }}>
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">
           <div className="rw-segment">

@@ -41,41 +41,47 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       {/* h1 page title with centered text */}
-      <br />
-      <h1 className="text-center">Contact</h1>
-      <br />
+      <div style={{ width: '90%', margin: '0 auto' }}>
+        <br />
+        <h1 className="text-center">Contact</h1>
+        <br />
 
-      <Toaster />
-      <FormWrapper
-        onSubmit={onSubmit}
-        config={{ mode: 'onBlur' }}
-        error={error}
-      >
-        <Form id="bsForm">
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="name" placeholder="Enter name" />
-          </Form.Group>
+        <Toaster />
+        <FormWrapper
+          onSubmit={onSubmit}
+          config={{ mode: 'onBlur' }}
+          error={error}
+        >
+          <Form id="bsForm">
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="name" placeholder="Enter name" />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicMessage">
-            <Form.Label>Message</Form.Label>
-            <Form.Control
-              type="message"
-              as="textarea"
-              rows={3}
-              placeholder="Enter message"
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </FormWrapper>
+            <Form.Group className="mb-3" controlId="formBasicMessage">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                type="message"
+                as="textarea"
+                rows={3}
+                placeholder="Enter message"
+              />
+            </Form.Group>
+            <Button
+              variant="primary"
+              type="submit"
+              style={{ width: '100%', margin: '0 auto' }}
+            >
+              Submit
+            </Button>
+          </Form>
+        </FormWrapper>
+      </div>
     </>
   )
 }
