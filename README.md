@@ -177,5 +177,10 @@ Generate simple Login, Signup and Forgot Password pages:
   yarn rw g dbAuth
   ```
 
+Setup Netlify deploy:
+  ```
+  yarn rw setup deploy netlify
+  ```
+
 [Read the full documentation](https://redwoodjs.com/docs/getting-started.md)
 
