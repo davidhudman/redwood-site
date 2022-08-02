@@ -12,19 +12,20 @@ const BlogLayout = ({ children }) => {
   return (
     <>
       <header>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="15000px">
           <Container>
             <Navbar.Brand href={routes.home()}>RW</Navbar.Brand>
-            {isAuthenticated ? (
-              <div>
-                <span>Hello, {currentUser.email}</span>{' '}
-              </div>
-            ) : (
-              <Link to={routes.login()}>Login</Link>
-            )}
+            {isAuthenticated ? <></> : <Link to={routes.login()}>Login</Link>}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
+                {isAuthenticated ? (
+                  <div>
+                    <span>Hello, {currentUser.email}</span>{' '}
+                  </div>
+                ) : (
+                  <></>
+                )}
                 <Nav.Link href={routes.home()}>Home</Nav.Link>
                 <Nav.Link href={routes.about()}>About</Nav.Link>
                 <Nav.Link href={routes.contact()}>Contact</Nav.Link>

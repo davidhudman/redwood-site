@@ -1,5 +1,8 @@
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+
 import {
-  Form,
+  Form as FormWrapper,
   TextField,
   TextAreaField,
   Submit,
@@ -43,41 +46,36 @@ const ContactPage = () => {
       <br />
 
       <Toaster />
-      <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }} error={error}>
-        <FormError error={error} wrapperClassName="form-error" />
-        <Label name="name">Name</Label>
-        <TextField
-          name="name"
-          label="Name"
-          validation={{ required: true }}
-          errorClassName="error"
-        />
-        <FieldError name="name" className="error" />
+      <FormWrapper
+        onSubmit={onSubmit}
+        config={{ mode: 'onBlur' }}
+        error={error}
+      >
+        <Form id="bsForm">
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="name" placeholder="Enter name" />
+          </Form.Group>
 
-        <Label name="email">Email</Label>
-        <TextField
-          name="email"
-          label="Email"
-          validation={{
-            required: true,
-          }}
-          errorClassName="error"
-        />
-        <FieldError name="email" className="error" />
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
 
-        <Label name="message">Message</Label>
-        <TextAreaField
-          name="message"
-          label="Message"
-          multiline
-          rows={4}
-          validation={{ required: true }}
-          errorClassName="error"
-        />
-        <FieldError name="message" className="error" />
-
-        <Submit disabled={loading}>Send Message</Submit>
-      </Form>
+          <Form.Group className="mb-3" controlId="formBasicMessage">
+            <Form.Label>Message</Form.Label>
+            <Form.Control
+              type="message"
+              as="textarea"
+              rows={3}
+              placeholder="Enter message"
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </FormWrapper>
     </>
   )
 }

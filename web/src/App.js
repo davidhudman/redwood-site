@@ -14,7 +14,10 @@ const App = () => (
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <AuthProvider type="dbAuth">
         <RedwoodApolloProvider>
-          <Routes />
+          {/* width 90% and center text content for all pages */}
+          <div style={{ width: '90%', margin: '0 auto' }}>
+            <Routes />
+          </div>
         </RedwoodApolloProvider>
       </AuthProvider>
     </RedwoodProvider>
