@@ -1,3 +1,9 @@
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
 import { useAuth } from '@redwoodjs/auth'
 import { Link, routes } from '@redwoodjs/router'
 
@@ -6,43 +12,45 @@ const BlogLayout = ({ children }) => {
   return (
     <>
       <header>
-        <div className="flex-between">
-          <h1>
-            <Link to={routes.home()}>Redwood Blog</Link>
-          </h1>
-          {isAuthenticated ? (
-            <div>
-              <span>Logged in as {currentUser.email}</span>{' '}
-              <button type="button" onClick={logOut}>
-                Logout
-              </button>
-            </div>
-          ) : (
-            <Link to={routes.login()}>Login</Link>
-          )}
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <Link to={routes.home()}>Home</Link>
-            </li>
-            <li>
-              <Link to={routes.about()}>About</Link>
-            </li>
-            <li>
-              <Link to={routes.contact()}>Contact</Link>
-            </li>
-            <li>
-              <Link to={routes.posts()}>Posts</Link>
-            </li>
-            <li>
-              <Link to={routes.landListings()}>Land Listings</Link>
-            </li>
-            <li>
-              <Link to={routes.newLandListing()}>Add New Listing</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar bg="light" expand="lg">
+          <Container>
+            <Navbar.Brand href={routes.home()}>RW</Navbar.Brand>
+            {isAuthenticated ? (
+              <div>
+                <span>Hello, {currentUser.email}</span>{' '}
+              </div>
+            ) : (
+              <Link to={routes.login()}>Login</Link>
+            )}
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href={routes.home()}>Home</Nav.Link>
+                <Nav.Link href={routes.about()}>About</Nav.Link>
+                <Nav.Link href={routes.contact()}>Contact</Nav.Link>
+                <NavDropdown title="Admin Pages" id="basic-nav-dropdown">
+                  <NavDropdown.Item href={routes.posts()}>
+                    Posts
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href={routes.contact()}>
+                    Add Land Listing
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href={routes.landListings()}>
+                    View Land Listings
+                  </NavDropdown.Item>
+                </NavDropdown>
+                {isAuthenticated ? (
+                  <button className="btn btn-secondary" onClick={logOut}>
+                    Logout
+                  </button>
+                ) : (
+                  <></>
+                )}
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </header>
       <main>{children}</main>
     </>
