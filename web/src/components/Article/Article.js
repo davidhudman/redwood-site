@@ -11,7 +11,7 @@ const Article = ({ article }) => {
         <Card.Body>
           <Card.Title>{article.title}</Card.Title>
           <Card.Text>{article.body}</Card.Text>
-          <Card.Text>{article.createdAt}</Card.Text>
+          <Card.Text>{new Date(article.createdAt).toDateString()}</Card.Text>
           <Button
             href={routes.article({ id: article.id })}
             variant="outline-primary"
