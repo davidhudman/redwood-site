@@ -52,7 +52,7 @@ const ContactPage = () => {
           config={{ mode: 'onBlur' }}
           error={error}
         >
-          <Form id="bsForm">
+          <Form id="bsForm" data-netlify="true">
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Name</Form.Label>
               <Form.Control type="name" placeholder="Enter name" />
