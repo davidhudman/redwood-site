@@ -22,7 +22,15 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => {
   return (
-    <div className="rw-text-center">
+    <div
+      className="rw-text-center"
+      style={{
+        width: '100%',
+        margin: '0 auto',
+        maxWidth: '480px',
+        padding: '2rem',
+      }}
+    >
       {'No landListings yet. '}
       <Link to={routes.newLandListing()} className="rw-link">
         {'Create one?'}

@@ -14,7 +14,15 @@ const LandListingForm = (props) => {
   }
 
   return (
-    <div className="rw-form-wrapper">
+    <div
+      className="rw-form-wrapper"
+      style={{
+        width: '100%',
+        margin: '0 auto',
+        maxWidth: '480px',
+        padding: '2rem',
+      }}
+    >
       <Form onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}

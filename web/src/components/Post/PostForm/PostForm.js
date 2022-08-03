@@ -4,6 +4,7 @@ import {
   FieldError,
   Label,
   TextField,
+  TextAreaField,
   Submit,
 } from '@redwoodjs/forms'
 
@@ -48,7 +49,7 @@ const PostForm = (props) => {
           Body
         </Label>
 
-        <TextField
+        <TextAreaField
           name="body"
           defaultValue={props.post?.body}
           className="rw-input"

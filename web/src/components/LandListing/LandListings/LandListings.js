@@ -75,7 +75,15 @@ const LandListingsList = ({ landListings }) => {
   }
 
   return (
-    <div className="rw-segment rw-table-wrapper-responsive">
+    <div
+      className="rw-segment rw-table-wrapper-responsive"
+      style={{
+        width: '100%',
+        margin: '0 auto',
+        maxWidth: '480px',
+        padding: '2rem',
+      }}
+    >
       <table className="rw-table">
         <thead>
           <tr>

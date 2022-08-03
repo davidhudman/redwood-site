@@ -41,8 +41,14 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       {/* h1 page title with centered text */}
-      <div style={{ width: '90%', margin: '0 auto' }}>
-        <br />
+      <div
+        style={{
+          width: '100%',
+          margin: '0 auto',
+          maxWidth: '480px',
+          padding: '1rem',
+        }}
+      >
         <h1 className="text-center">Contact</h1>
         <br />
 

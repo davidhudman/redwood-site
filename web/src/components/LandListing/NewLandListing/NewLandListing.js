@@ -31,7 +31,15 @@ const NewLandListing = () => {
   }
 
   return (
-    <div className="rw-segment">
+    <div
+      className="rw-segment"
+      style={{
+        width: '100%',
+        margin: '0 auto',
+        maxWidth: '480px',
+        padding: '2rem',
+      }}
+    >
       <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-secondary">New LandListing</h2>
       </header>

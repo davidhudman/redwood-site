@@ -8,15 +8,24 @@ const AboutPage = () => {
   return (
     <>
       <MetaTags title="About" description="About page" />
-      <div style={{ width: '100%', margin: '0 auto' }}>
+      <div
+        style={{
+          width: '100%',
+          margin: '0 auto',
+          maxWidth: '480px',
+          padding: '1rem',
+        }}
+      >
         <Card style={{ margin: '0 auto' }}>
           {/* <Card.Img variant="top" src="https://imgur.com/t/deer/iMZqE3b" /> */}
           <Card.Body>
             {/* align a card title center */}
-            <Card.Title style={{ textAlign: 'center' }}>CompanyName</Card.Title>
+            <Card.Title style={{ textAlign: 'center' }}>
+              Company Name
+            </Card.Title>
             <Card.Text style={{ textAlign: 'center' }}>
-              An open source, modern web framework for building React
-              applications.
+              A technology company that specializes in cutting-edge software
+              engineering.
             </Card.Text>
             <Button
               style={{ width: '100%', margin: '0 auto' }}
