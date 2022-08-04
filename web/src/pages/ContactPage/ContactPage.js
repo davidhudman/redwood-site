@@ -64,6 +64,7 @@ const ContactPage = () => {
           <TextField
             name="name"
             label="Name"
+            placeholder="Enter name"
             validation={{ required: true }}
             errorClassName="error"
             className="form-control"
@@ -74,6 +75,7 @@ const ContactPage = () => {
           <TextField
             name="email"
             label="Email"
+            placeholder="Enter email"
             validation={{
               required: true,
             }}
@@ -86,6 +88,7 @@ const ContactPage = () => {
           <TextAreaField
             name="message"
             label="Message"
+            placeholder="Enter message"
             multiline
             rows={4}
             validation={{ required: true }}
