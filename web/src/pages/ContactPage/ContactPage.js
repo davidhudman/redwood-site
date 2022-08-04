@@ -1,8 +1,5 @@
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-
 import {
-  Form as FormWrapper,
+  Form,
   TextField,
   TextAreaField,
   Submit,
@@ -13,6 +10,9 @@ import {
 } from '@redwoodjs/forms'
 import { MetaTags, useMutation } from '@redwoodjs/web'
 import { Toaster, toast } from '@redwoodjs/web/toast'
+
+// import bootstrap css
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -50,43 +50,63 @@ const ContactPage = () => {
         }}
       >
         <h1 className="text-center">Contact</h1>
-        <br />
 
         <Toaster />
-        <FormWrapper
+        <Form
           onSubmit={onSubmit}
           config={{ mode: 'onBlur' }}
           error={error}
+          name="contact"
+          data-netlify="true"
         >
-          <Form id="bsForm" data-netlify="true">
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="name" placeholder="Enter name" />
-            </Form.Group>
+          <FormError error={error} wrapperClassName="form-error" />
+          <Label name="name">Name</Label>
+          <TextField
+            name="name"
+            label="Name"
+            validation={{ required: true }}
+            errorClassName="error"
+            className="form-control"
+          />
+          <FieldError name="name" className="error" />
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
+          <Label name="email">Email</Label>
+          <TextField
+            name="email"
+            label="Email"
+            validation={{
+              required: true,
+            }}
+            errorClassName="error"
+            className="form-control"
+          />
+          <FieldError name="email" className="error" />
 
-            <Form.Group className="mb-3" controlId="formBasicMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                type="message"
-                as="textarea"
-                rows={3}
-                placeholder="Enter message"
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              style={{ width: '100%', margin: '0 auto' }}
+          <Label name="message">Message</Label>
+          <TextAreaField
+            name="message"
+            label="Message"
+            multiline
+            rows={4}
+            validation={{ required: true }}
+            errorClassName="error"
+            className="form-control"
+          />
+          <FieldError name="message" className="error" />
+
+          <br />
+
+          <div className="text-center" style={{ width: '100%' }}>
+            <Submit
+              disabled={loading}
+              type="button"
+              className="btn btn-primary btn-lg btn-block"
+              style={{ width: '100%' }}
             >
-              Submit
-            </Button>
-          </Form>
-        </FormWrapper>
+              Send Message
+            </Submit>
+          </div>
+        </Form>
       </div>
     </>
   )
