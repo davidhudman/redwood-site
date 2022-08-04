@@ -52,13 +52,7 @@ const ContactPage = () => {
         <h1 className="text-center">Contact</h1>
 
         <Toaster />
-        <Form
-          onSubmit={onSubmit}
-          config={{ mode: 'onBlur' }}
-          error={error}
-          name="contact"
-          data-netlify="true"
-        >
+        <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }} error={error}>
           <FormError error={error} wrapperClassName="form-error" />
           <Label name="name">Name</Label>
           <TextField
