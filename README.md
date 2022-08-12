@@ -182,5 +182,5 @@ Setup Netlify deploy:
   yarn rw setup deploy netlify
   ```
 
-[Read the full documentation](https://redwoodjs.com/docs/getting-started.md)
+[Read the full tutorial](https://redwoodjs.com/docs/tutorial/foreword)
 
